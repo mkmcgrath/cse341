@@ -1,0 +1,13 @@
+GET http://localhost:3000/contacts
+
+###
+
+GET http://localhost:3000/contacts/69f51f43e50dc75eea49164f
+
+###
+
+GET https://cse341-squirm.onrender.com/contacts
+
+###
+
+GET https://cse341-squirm.onrender.com/contacts/69f51f43e50dc75eea49164f
