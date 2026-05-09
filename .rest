@@ -11,3 +11,32 @@ GET https://cse341-squirm.onrender.com/contacts
 ###
 
 GET https://cse341-squirm.onrender.com/contacts/69f51f43e50dc75eea49164f
+
+### Create contact
+POST http://localhost:3000/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Rigby",
+    "lastName":"McGrath",
+    "email":"rigby@rigby.com",
+    "favoriteColor":"White",
+    "birthday":"06/19/2014"
+}
+
+
+### Update contact
+PUT http://localhost:3000/contacts/6610738e4a9e9921473950f5 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Sadie",
+    "lastName":"McGrath",
+    "email":"sadie44@gmail.com",
+    "favoriteColor":"Brown",
+    "birthday":"12/12/2008"
+}
+
+
+### Delete contact
+DELETE http://localhost:3000/contacts/661074e04a9e9921473950f6 HTTP/1.1

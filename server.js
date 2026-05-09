@@ -4,10 +4,8 @@ const port = process.env.PORT || 3000;
 require('dotenv').config();
 const { initDB } = require('./database.js');
 
-
-
+app.use(express.json());
 app.use('/', require('./routes'))
-
 
 async function main() {
   try {
