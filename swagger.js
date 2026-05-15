@@ -6,7 +6,7 @@ const doc = {
     description: 'Contacts API for CSE341',
   },
   host: 'cse341-squirm.onrender.com',
-  schemes: ['http'],
+  schemes: ['https'],
   definitions: {
     Contact: {
       firstName: 'Any',
