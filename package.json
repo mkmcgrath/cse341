@@ -19,9 +19,12 @@
   },
   "homepage": "https://github.com/nathanbirch/cse341-apiCourse-code#readme",
   "dependencies": {
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^4.17.3",
-    "mongodb": "^7.2.0"
+    "mongodb": "^7.2.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

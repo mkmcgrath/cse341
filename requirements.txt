@@ -1,0 +1,143 @@
+Review the project requirements and grading rubric.
+Create Swagger documentation for this API project. One of the easiest ways to do this is to use the packages mentioned and used in the team activity. (Create a new Swagger file and add documentation for each route you see there. There are many ways to do this, but this swagger-autogen package may be useful.
+Generate a visual UI and living documentation of your swagger.json. There are many ways to do this, but this swagger-ui-express package may be useful.)
+With your published API (not localhost), test your swagger documentation routes to ensure they work.
+Once completed, push any changes to GitHub and verify changes in Render.
+Your published project must include an "/api-docs" route that has the interactive Swagger GUI.
+Record a brief video demonstration that shows you using the Swagger documentation successfully sending requests to each route. Be sure to use your Render url for this. Also include evidence that your database is being updated. If Render isn't working, you may use localhost, but you still need to submit your Render link in this project submission. Look at the rubric to see how many points will be deducted if you use localhost in this video.
+Push to GitHub.
+Publish to Render.
+Create a brief video demonstrating the functionality of your assignment. Upload it to YouTube (public or unlisted).
+Submit GitHub, Render, and YouTube links in I-Learn.
+Be sure to review the rubric below to see how you will be graded on this assignment.
+EXTRA CREDIT OPPORTUNITY: You can get up to 10% added to your project grade if you display in your video that you successfully used the fronted project referenced below to use your backend API (details in the syllabus).
+
+
+
+
+
+
+
+
+
+Rubric
+Criteria Weight Mastery Proficient Developing Beginning Missing/Incomplete
+100% 90% 78% 65% 0%
+HTTP Requests
+(Graded via YouTube)
+25%
+Meets Proficient criteria and
+performs PUT request. MongoDB is updated
+Meets Developing criteria
+and performs POST and DELETE requests. MongoDB
+is updated
+Meets Beginning criteria
+and performs GET requests
+from MongoDB
+Node project has evidence
+of http requests
+GitHub link, or YouTube link
+not submitted. Or no
+evidence of HTTP requests
+API Documentation
+(Graded via YouTube)
+25%
+Meets Proficient criteria and
+the swagger.json contains a
+contact schema that is used
+in all of the routes
+Meets Developing criteria
+and the route: "/api-docs" is
+accessible and is able to test
+the endpoints
+Meets Beginning criteria
+and the following routes are
+present in the swagger.json: GET all, GET by id, PUT,
+POST, and DELETE
+Node project contains a
+swagger.json file with some
+content in it relevant to the
+"contacts" project
+No API documentation
+present (no swagger.json or
+"api-docs" route in project
+for swagger)
+Deployment
+(Graded via YouTube)
+25%
+Meets Proficient criteria and
+uses Render Config Vars (no
+database credentials stored
+in GitHub - must show
+GitHub repo in video)
+Meets Developing criteria
+and video shows project
+functionality using Render
+(not localhost)
+Meets Beginning criteria,
+project is deployed to
+Render and Render shows
+no errors
+Render project has been
+created
+Render link, GitHub link, or
+YouTube link not submitted
+Database
+(Graded via YouTube)
+15%
+Meets Proficient criteria and
+the contacts in the database
+have the following fields:
+firstName, lastName, email,
+favoriteColor, and birthday
+Meets Developing criteria
+and the contacts collection
+has at least five contacts
+Meets Beginning criteria
+and MongoDB has a
+collection called "contacts"
+MongoDB account exists
+and was demonstrated in
+the video
+No evidence of database
+present or no YouTube link
+Architecture
+(Graded via GitHub)
+10%
+Meets Proficient criteria plus
+includes a .rest file with
+routes for localhost and
+Render
+Meets Developing criteria
+plus each route calls a
+function imported from a
+controller
+Meets Beginning criteria
+plus server connects to
+routes in project "routes"
+folder using only a single
+line of code
+Server file is present in root
+folder (server.js, index.js or
+app.js) to run the Node
+project
+Render link not submitted
+EXTRA CREDIT
+Frontend
+Integration
+(Graded via YouTube)
+10%
+Meets Developing criteria
+and the backend PUT works
+on the frontend and the
+data change shows in MongoDB
+Meets Developing criteria
+and the backend POST works on the frontend and
+the data change shows in MongoDB
+Meets Beginning criteria
+and the backend DELETE works on the frontend and
+the data change shows in MongoDB
+The backend GET works on
+the frontend
+No attempt made or
+nothing works
