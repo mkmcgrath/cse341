@@ -1,0 +1,58 @@
+### Localhost
+GET http://localhost:3000/flashcards
+
+###
+GET http://localhost:3000/flashcards/645b2f1e9c3e2a1b0d4e5f60
+
+###
+POST http://localhost:3000/flashcards
+Content-Type: application/json
+
+{
+    "question": "What is the capital of France?",
+    "answer": "Paris",
+    "category": "Geography"
+}
+
+###
+PUT http://localhost:3000/flashcards/645b2f1e9c3e2a1b0d4e5f60
+Content-Type: application/json
+
+{
+    "question": "What is the capital of France? (Updated)",
+    "answer": "Paris",
+    "category": "Geography"
+}
+
+###
+DELETE http://localhost:3000/flashcards/645b2f1e9c3e2a1b0d4e5f60
+
+
+### Render
+GET https://cse341-w05.onrender.com/flashcards
+
+###
+GET https://cse341-w05.onrender.com/flashcards/645b2f1e9c3e2a1b0d4e5f60
+
+###
+POST https://cse341-w05.onrender.com/flashcards
+Content-Type: application/json
+
+{
+    "question": "What is the capital of France?",
+    "answer": "Paris",
+    "category": "Geography"
+}
+
+###
+PUT https://cse341-w05.onrender.com/flashcards/645b2f1e9c3e2a1b0d4e5f60
+Content-Type: application/json
+
+{
+    "question": "What is the capital of France? (Updated)",
+    "answer": "Paris",
+    "category": "Geography"
+}
+
+###
+DELETE https://cse341-w05.onrender.com/flashcards/645b2f1e9c3e2a1b0d4e5f60
