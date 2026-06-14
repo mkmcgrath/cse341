@@ -6,7 +6,7 @@ const doc = {
     description: 'API for managing flashcards',
   },
   host: 'cse341-squirm.onrender.com',
-  schemes: ['http', 'https'],
+  schemes: ['https'],
 };
 
 const outputFile = './swagger.json';
