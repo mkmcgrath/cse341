@@ -5,7 +5,7 @@ const doc = {
     title: 'Flashcard API',
     description: 'API for managing flashcards',
   },
-  host: 'localhost:3000',
+  host: 'cse341-squirm.onrender.com',
   schemes: ['http', 'https'],
 };
 

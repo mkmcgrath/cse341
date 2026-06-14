@@ -15,6 +15,9 @@ const getAll = async (req, res) => {
 const getSingle = async (req, res) => {
   try {
     const db = getDB();
+    if (!ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ message: 'Invalid flashcard ID' });
+    }
     const id = new ObjectId(req.params.id);
     const result = await db.collection('flashcards').findOne({ _id: id });
     if (!result) {
@@ -29,11 +32,24 @@ const getSingle = async (req, res) => {
 
 const createFlashcard = async (req, res) => {
   try {
+    const { question, answer, category, difficulty, hint, tags, notes } = req.body;
+    if (!question || !answer || !category || !difficulty) {
+      return res.status(400).json({ message: 'question, answer, category, and difficulty are required' });
+    }
+    const validDifficulties = ['easy', 'medium', 'hard'];
+    if (!validDifficulties.includes(difficulty)) {
+      return res.status(400).json({ message: 'difficulty must be easy, medium, or hard' });
+    }
     const db = getDB();
     const flashcard = {
-      question: req.body.question,
-      answer: req.body.answer,
-      category: req.body.category
+      question,
+      answer,
+      category,
+      difficulty,
+      hint: hint || '',
+      tags: Array.isArray(tags) ? tags : [],
+      notes: notes || '',
+      createdAt: new Date().toISOString(),
     };
     const result = await db.collection('flashcards').insertOne(flashcard);
     if (result.acknowledged) {
@@ -48,12 +64,28 @@ const createFlashcard = async (req, res) => {
 
 const updateFlashcard = async (req, res) => {
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ message: 'Invalid flashcard ID' });
+    }
+    const { question, answer, category, difficulty, hint, tags, notes } = req.body;
+    if (!question || !answer || !category || !difficulty) {
+      return res.status(400).json({ message: 'question, answer, category, and difficulty are required' });
+    }
+    const validDifficulties = ['easy', 'medium', 'hard'];
+    if (!validDifficulties.includes(difficulty)) {
+      return res.status(400).json({ message: 'difficulty must be easy, medium, or hard' });
+    }
     const db = getDB();
     const id = new ObjectId(req.params.id);
     const flashcard = {
-      question: req.body.question,
-      answer: req.body.answer,
-      category: req.body.category
+      question,
+      answer,
+      category,
+      difficulty,
+      hint: hint || '',
+      tags: Array.isArray(tags) ? tags : [],
+      notes: notes || '',
+      createdAt: new Date().toISOString(),
     };
     const result = await db.collection('flashcards').replaceOne({ _id: id }, flashcard);
     if (result.modifiedCount > 0) {
@@ -68,6 +100,9 @@ const updateFlashcard = async (req, res) => {
 
 const deleteFlashcard = async (req, res) => {
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      return res.status(400).json({ message: 'Invalid flashcard ID' });
+    }
     const db = getDB();
     const id = new ObjectId(req.params.id);
     const result = await db.collection('flashcards').deleteOne({ _id: id });
@@ -81,10 +116,4 @@ const deleteFlashcard = async (req, res) => {
   }
 };
 
-module.exports = {
-  getAll,
-  getSingle,
-  createFlashcard,
-  updateFlashcard,
-  deleteFlashcard
-};
+module.exports = { getAll, getSingle, createFlashcard, updateFlashcard, deleteFlashcard };

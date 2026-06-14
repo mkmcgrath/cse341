@@ -26,9 +26,14 @@ router.get(
 );
 
 router.get('/', (req, res) => {
-  res.send(req.user !== undefined ? `Logged in as ${req.user.displayName}` : 'Logged Out');
+  if (req.user) {
+    res.send(`<html><body style="text-align:center;font-family:sans-serif"><img src="/loggedin.png" style="max-width:100%"><p>Logged in as ${req.user.displayName}</p></body></html>`);
+  } else {
+    res.send(`<html><body style="text-align:center"><img src="/loggedout.png" style="max-width:100%"></body></html>`);
+  }
 });
 
 router.use('/flashcards', require('./flashcards'));
+router.use('/decks', require('./decks'));
 
 module.exports = router;
